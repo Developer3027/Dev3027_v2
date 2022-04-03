@@ -1,18 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=IM+Fell+English+SC&family=Inconsolata&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --bg-black-900: #0f172a;
-  --bg-black-100: #353535;
-  --bg-black-50: #eef0f4;
-  --bg-black-20: #414546;
-  --bg-antique-20: #dfdacb;
-  --burnt: #db9601;
-  --green: #4FB046;
-  --green-drk: #075500;
-}
 
 * {
   margin: 0;
@@ -30,15 +20,7 @@ html {
 
 body {
   overflow-x: hidden;
-  /* background-color: var(--bg-antique-20); */
   transition: 250ms ease 0.15s;
-}
-
-body.dark {
-  --bg-black-100: #ffffff;
-  --bg-black-50: #000000;
-  --bg-black-20: #eef0f4;
-  --bg-antique-20: #363530;
 }
 
 /* sidebar navigation */
@@ -46,7 +28,8 @@ body.dark {
   @apply fixed top-2 bottom-0 left-5 z-20;
 }
 .menu {
-  position: absolute;
+  @apply absolute w-[60px] h-[600px] bg-antique-20 border-2 border-drk-green rounded m-auto z-10 top-0 bottom-0 transition-all font-dosis;
+  /* position: absolute;
   width: 60px;
   height: 600px;
   background-color: var(--bg-black-50);
@@ -57,7 +40,7 @@ body.dark {
   margin: auto;
   border-radius: 0.3rem;
   transition: 250ms ease 0.15s;
-  font-family: sans-serif;
+  font-family: sans-serif; */
 }
 
 .menu.open {
@@ -435,13 +418,14 @@ body.dark {
 
 /** -------- Footer --------- */
 .footer {
-  display: flex;
+  @apply flex justify-center items-center w-full px-3 bg-slate-50;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-black-50);
   width: 100%;
   height: 100%;
-  padding: 0.5em 0;
+  padding: 0.5em 0; */
 }
 
 .footer__wrapper {
@@ -459,7 +443,8 @@ body.dark {
 }
 
 .footer__mid {
-  display: flex;
+  @apply flex justify-center items-center rounded-full border-2 border-antique-20 bg-slate-900 p-1 -mt-6 w-[100px] h-[100px] z-10;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -469,7 +454,7 @@ body.dark {
   padding: .3rem;
   width: 100px;
   height: 100px;
-  z-index: 5;
+  z-index: 5; */
 }
 
 .footer__div {

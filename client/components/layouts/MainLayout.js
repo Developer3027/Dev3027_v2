@@ -1,9 +1,9 @@
 import React from 'react';
-import Sidebar from './nav/Sidebar';
-import Navbar from './nav/Navbar';
-import Footer from './Footer';
+import Sidebar from '../nav/Sidebar';
+import Navbar from '../nav/Navbar';
+import Footer from '../Footer';
 
-const Layout = (props) => {
+const MainLayout = (props) => {
   const { children } = props;
 
   return (
@@ -13,12 +13,10 @@ const Layout = (props) => {
         <Sidebar />
         {children}
       </div>
-      <div className='flex'>
         <Footer />
-      </div>
     </div>
   );
 }
 
-export default Layout;
+export default MainLayout;
 

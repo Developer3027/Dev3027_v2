@@ -1,37 +1,9 @@
-/* :root {
-  --primary: #3E717E;
-  --secondary: #FFB389;
-  --drk-primary: #40677D;
-  --drk-secondary: #FF9256;
-  --light-primary: #B5E5FF;
-  --light-secondary: #FFD7C2;
-
-  --red: #ff0f00;
-  --green: #3ac204;
-  --link: #0095D6;
-  --burnt: #2f2f2f;
-
-  --white: #ffffff;
-  --black: #000000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-/* a {
-  color: var(--primary);
-  text-decoration: none;
-} */
-
 .backing {
-  @apply flex flex-col items-center justify-center min-h-screen bg-st-drk-primary min-w-fit;
+  @apply flex flex-col items-center justify-center h-screen bg-st-drk-primary;
 }
 
 .backing__header {
-  @apply rounded-t-lg bg-white lg:w-[650px] xl:w-[1024px];
+  @apply rounded-t-lg bg-white w-screen mx-4 lg:w-[1024px] mt-8;
 }
 
 .st__nav__container {
@@ -40,32 +12,15 @@
 
 /*] Navigation */
 .st__navbar {
-  @apply flex justify-start w-full  mt-4 mx-2;
-  /* position: absolute;
-  width: 100%;
-  z-index: 900;
-  top: 70px; */
+  @apply flex justify-start w-full mt-4 mx-2;
 }
 
 .st__logo {
   @apply bg-st-logo w-[100px] h-[100px] ml-4;
-  /* background: url(images/st/logo.svg);
-  width: 100px;
-  height: 100px; */
 }
 
 .mobile {
   @apply flex justify-center items-center w-16 h-16 rounded-lg cursor-pointer z-10 mr-4 border border-slate-400;
-  /* position: fixed;
-  width: 60px;
-  aspect-ratio: 1;
-  border: 0;
-  border-radius: 10px;
-  background: var(--white);
-  cursor: pointer;
-  top: .5rem;
-  right: 3rem;
-  z-index: 9999; */
 }
 
 /*.mobile div {
@@ -81,20 +36,15 @@
 }
 
 .mobile span {
-  @apply block w-full h-1 rounded-md absolute top-1/2 left-1/2 /* translate-x-1/2 translate-y-1/2 transition-all;
-  width: 100%;
-  height: 5px;
-  border-radius: 5px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 250ms, width 250ms;*/
+  @apply block w-full h-1 rounded-md absolute top-1/2 left-1/2 translate-x-1/2 translate-y-1/2 transition-all;
 } 
 
-.st__menu__false {
-  @apply transition-all;
+.st__menu__show {
+  @apply opacity-100 transition-all;
+}
+
+.st__menu__hide {
+  @apply animate-pulse;
 }
 
 /* .mobile .line__one {
@@ -178,7 +128,7 @@
 
 /*] Hero section */
 .st__container {
-  @apply flex items-center justify-center lg:w-[650px] xl:w-[1024px] overflow-hidden;
+  @apply flex items-center justify-center w-full lg:w-[1024px];
   /* max-width: 1024px;
   background-color: white;
   overflow: hidden; */
@@ -187,6 +137,7 @@
 .st__upper {
   /* position: relative; */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%; 
@@ -195,23 +146,24 @@
 }
 
 .st__hero {
+  @apply flex flex-col sm:flex-row justify-evenly;
+  /* width: 100%; */
   display: flex;
-
-  flex-direction: column;
-  margin-top: 12rem;
+  /* flex-direction: column; */
+  /* margin-top: 12rem; */
   /* --gap: 5em; */
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .st__title__info {
-  @apply flex flex-col items-center justify-center;
+  @apply flex flex-col items-center justify-center w-3/4 mr-8;
 }
 
 .st__hero__title {
   text-align: center;
   font-family: 'IM Fell English SC', serif;
   margin-top: 2.5rem;
-  font-size: 4.5rem;
+  font-size: 4rem;
   filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
 }
 
@@ -223,6 +175,14 @@
   filter: drop-shadow(3px 3px 2px rgb(177, 177, 177)); */
 }
 
+.st__hero__actions {
+  @apply flex justify-around my-16 w-full;
+  /* display: flex;
+  margin-top: 4rem;
+  width: 100%;
+  justify-content: space-around; */
+}
+
 .st__learn__more__btn {
   @apply text-st-drk-primary bg-white border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2;
 }
@@ -231,27 +191,31 @@
   @apply text-white bg-st-drk-primary border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2;
 }
 
+.st__hero__img__wrap {
+  @apply flex justify-center items-center;
+}
+
 .st__hero__tag {
+  @apply w-60;
   filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
 }
 
-.st__hero__actions {
-  margin-top: 4rem;
-  justify-content: space-evenly;
-}
-
-.arrow-wrap {
+.st__arrow__wrap {
   position: relative;
 }
 
-.arrow {
+.st__arrow {
   position: absolute;
-  left: 475px;
+  left: 0;
   margin-top: -1.5rem;
   filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
 }
 
-.wave1 {
+.st__wave1__wrap {
+  @apply flex justify-center border-2 border-red-600;
+}
+
+.st__wave1 {
   position: absolute;
   z-index: 5;
   width: 100%;
@@ -259,7 +223,7 @@
   bottom: 3%;
 }
 
-.wave2 {
+.st__wave2 {
   position: absolute;
   z-index: 1;
   width: 100%;

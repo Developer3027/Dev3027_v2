@@ -12,7 +12,7 @@ import {
   FaBullhorn
 } from 'react-icons/fa';
 
-import MainLayout from '../components/MainLayout'
+import MainLayout from '../components/layouts/MainLayout'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
